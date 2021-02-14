@@ -86,7 +86,7 @@ public class Main {
             Integer[] arra = gen.Generar(cant);
             System.out.println("El Array Original es:");
             System.out.println(Arrays.toString(arra));
-            //Poner para llamar al metodo de quick sort
+            sort.quicksort(arra, 0, cant-1);
             System.out.println("El Array Sorteado utilizando el algoritmo Quick sort es:");
             System.out.println(Arrays.toString(arra));
 
