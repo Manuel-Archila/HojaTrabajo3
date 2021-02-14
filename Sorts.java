@@ -97,14 +97,15 @@ public class Sorts {
     }
   }
 
-  public void gnomeSort(Integer[] arr){
+  public void gnomeSort(Comparable<Integer>[] arr){
     for (int i = 1; i < arr.length;){
 
-      if(arr[i-1] <= arr[i]){
+      int com =(Integer) arr[i];
+      if(arr[i-1].compareTo(com) <= 0){
         i++;
 
       }else{
-        int tempArr = arr[i-1];
+        int tempArr = (int) arr[i-1];
         arr[i-1] = arr[i];
         arr[i] = tempArr;
         i--;
@@ -115,9 +116,9 @@ public class Sorts {
     }
   }
 
-  public Integer[] mergeSort(Integer[] arr){
+  public Integer[] mergeSort(Comparable<Integer>[] arr){
     if(arr.length <= 1){
-      return arr;
+      return (Integer[]) arr;
     }
     int midpoint = arr.length /2;
     Integer[] left = new Integer[midpoint];
@@ -130,10 +131,10 @@ public class Sorts {
     }
 
     for(int i=0; i < midpoint; i++){
-      left[i] = arr[i];
+      left[i] = (Integer) arr[i];
     }
     for(int j=0; j < right.length; j++){
-      right[j] = arr[midpoint + j];
+      right[j] = (Integer) arr[midpoint + j];
     }
 
     Integer[] result = new Integer[arr.length];
@@ -144,7 +145,7 @@ public class Sorts {
     return result;
   }
 
-  public Integer[] merge(Integer[] left, Integer[] right){
+  public Integer[] merge(Comparable<Integer>[] left, Comparable<Integer>[] right){
     Integer[] result = new Integer[left.length + right.length];
 
     int leftPointer, rightPointer, resultPointer;
@@ -153,26 +154,27 @@ public class Sorts {
     while(leftPointer < left.length || rightPointer < right.length){
 
       if(leftPointer < left.length && rightPointer < right.length){
-        if(left[leftPointer] < right[rightPointer]){
-          result[resultPointer++] = left[leftPointer++];
+        int rp = (Integer) right[rightPointer];
+        if(left[leftPointer].compareTo(rp) < 0){
+          result[resultPointer++] = (Integer) left[leftPointer++];
         }else{
-          result[resultPointer++] = right[rightPointer++];
+          result[resultPointer++] = (Integer) right[rightPointer++];
         }
       }
 
       else if(leftPointer < left.length){
-        result[resultPointer++] = left[leftPointer++];
+        result[resultPointer++] = (Integer) left[leftPointer++];
       } else if(rightPointer < right.length){
-        result[resultPointer++] = right[rightPointer++];
+        result[resultPointer++] = (Integer) right[rightPointer++];
       }
     }
 
     return result;
   }
 
-  public void swap(Integer[] arr, int left, int right){
+  public void swap(Comparable<Integer>[] arr, int left, int right){
 
-    int temp = arr[left];
+    int temp = (int) arr[left];
     arr[left] = arr[right];
     arr[right] = temp;
   }
