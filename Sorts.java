@@ -115,7 +115,7 @@ public class Sorts {
     }
   }
 
-  public static Integer[] mergeSort(Integer[] arr){
+  public Integer[] mergeSort(Integer[] arr){
     if(arr.length <= 1){
       return arr;
     }
@@ -144,7 +144,7 @@ public class Sorts {
     return result;
   }
 
-  public static Integer[] merge(Integer[] left, Integer[] right){
+  public Integer[] merge(Integer[] left, Integer[] right){
     Integer[] result = new Integer[left.length + right.length];
 
     int leftPointer, rightPointer, resultPointer;
@@ -193,7 +193,7 @@ public class Sorts {
       }
     }
   }
-  
+
 }
 
 
