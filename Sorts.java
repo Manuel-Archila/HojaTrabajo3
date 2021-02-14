@@ -179,14 +179,15 @@ public class Sorts {
     arr[right] = temp;
   }
 
-  public void selectionSort(Integer[] arr){
+  public void selectionSort(Comparable<Integer>[] arr){
     int min;
 
     for(int i=0; i < arr.length -1; i++){
       min = i;
 
       for(int j=i+1; j<arr.length; j++){
-        if(arr[j] < arr[min]){
+        int m = (Integer) arr[min];
+        if(arr[j].compareTo(m) < 0){
           min = j;
         }
       }
