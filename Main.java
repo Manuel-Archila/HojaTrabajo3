@@ -21,15 +21,12 @@ public class Main {
     }
     Integer[] arra = gen.Generar(cant);
 
-    sort.quicksort(arra, 0, cant-1);
+    sort.radixsort(arra, cant-1);
 
     System.out.println(Arrays.toString(arra));
 
+    scan.close();
     
-
-
-
-
   }
   
 }
