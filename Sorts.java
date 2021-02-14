@@ -96,6 +96,104 @@ public class Sorts {
       countSort(arr, n, exp); 
     }
   }
+
+  public void gnomeSort(Integer[] arr){
+    for (int i = 1; i < arr.length;){
+
+      if(arr[i-1] <= arr[i]){
+        i++;
+
+      }else{
+        int tempArr = arr[i-1];
+        arr[i-1] = arr[i];
+        arr[i] = tempArr;
+        i--;
+;      }
+      if(i == 0){
+        i=1;
+      }
+    }
+  }
+
+  public static Integer[] mergeSort(Integer[] arr){
+    if(arr.length <= 1){
+      return arr;
+    }
+    int midpoint = arr.length /2;
+    Integer[] left = new Integer[midpoint];
+    Integer[] right;
+
+    if(arr.length % 2 ==0){
+      right = new Integer[midpoint];
+    }else{
+      right = new Integer[midpoint +1];
+    }
+
+    for(int i=0; i < midpoint; i++){
+      left[i] = arr[i];
+    }
+    for(int j=0; j < right.length; j++){
+      right[j] = arr[midpoint + j];
+    }
+
+    Integer[] result = new Integer[arr.length];
+    left = mergeSort(left);
+    right = mergeSort(right);
+    result = merge(left, right);
+
+    return result;
+  }
+
+  public static Integer[] merge(Integer[] left, Integer[] right){
+    Integer[] result = new Integer[left.length + right.length];
+
+    int leftPointer, rightPointer, resultPointer;
+    leftPointer = rightPointer = resultPointer = 0;
+
+    while(leftPointer < left.length || rightPointer < right.length){
+
+      if(leftPointer < left.length && rightPointer < right.length){
+        if(left[leftPointer] < right[rightPointer]){
+          result[resultPointer++] = left[leftPointer++];
+        }else{
+          result[resultPointer++] = right[rightPointer++];
+        }
+      }
+
+      else if(leftPointer < left.length){
+        result[resultPointer++] = left[leftPointer++];
+      } else if(rightPointer < right.length){
+        result[resultPointer++] = right[rightPointer++];
+      }
+    }
+
+    return result;
+  }
+
+  public void swap(Integer[] arr, int left, int right){
+
+    int temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+  }
+
+  public void selectionSort(Integer[] arr){
+    int min;
+
+    for(int i=0; i < arr.length -1; i++){
+      min = i;
+
+      for(int j=i+1; j<arr.length; j++){
+        if(arr[j] < arr[min]){
+          min = j;
+        }
+      }
+      if(min != i){
+        swap(arr, i, min);
+      }
+    }
+  }
+  
 }
 
 
