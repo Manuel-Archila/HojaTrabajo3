@@ -44,17 +44,6 @@ public class Main {
             System.out.println("El Array Sorteado utilizando el algoritmo Gnome sort es:");
             System.out.println(Arrays.toString(arra));
 
-            /*
-            for(int i =10; i <= 3000; i++){
-              Integer[] arra = gen.Generar(i);
-              System.out.println("El Array Original es:");
-              System.out.println(Arrays.toString(arra));
-              sort.gnomeSort(arra);
-              System.out.println("El Array Sorteado utilizando el algoritmo Gnome sort es:");
-              System.out.println(Arrays.toString(arra));
-            }
-            */
-
             break;
 
           }
