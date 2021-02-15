@@ -1,7 +1,8 @@
 import java.util.Arrays;
 public class Sorts {
 
-  private int partitionqS(Comparable<Integer>[] arr, int low, int high) { 
+  private int partitionqS(Comparable<Integer>[] arr, int low, int high) {
+    //Metodo que es utilizado por Quicksort
     int pivot = (Integer)arr[high];  
     int i = (low-1); // index of smaller element 
     for (int j=low; j<high; j++) { 
@@ -26,6 +27,7 @@ public class Sorts {
 
 
   public void quicksort(Comparable<Integer>[] arr, int low, int high){
+    //Metodo extraido de GeeksforGeeks
     if (low < high) { 
       /* pi is partitioning index, arr[pi] is  
         now at right place */
@@ -39,7 +41,8 @@ public class Sorts {
   }
 
   // A utility function to get maximum value in arr[] 
-  private int getMax(Comparable<Integer>[] arr, int n) 
+  private int getMax(Comparable<Integer>[] arr, int n)
+  //Metodo que es utilizado por RadixSort
   { 
     int mx =(Integer) arr[0]; 
     for (int i = 1; i < n; i++){
@@ -52,7 +55,8 @@ public class Sorts {
 
   // A function to do counting sort of arr[] according to 
   // the digit represented by exp. 
-  private void countSort(Comparable<Integer>[] arr, int n, int exp){ 
+  private void countSort(Comparable<Integer>[] arr, int n, int exp){
+    //Metodo que es utilizado por RadixSort
     int output[] = new int[n]; // output array 
     int i; 
     int count[] = new int[10]; 
@@ -84,7 +88,8 @@ public class Sorts {
 
   // The main function to that sorts arr[] of size n using 
   // Radix Sort 
-  public void radixsort(Comparable<Integer>[] arr, int n) 
+  public void radixsort(Comparable<Integer>[] arr, int n)
+  //Metodo extraido de GeekforGeeks
   { 
     // Find the maximum number to know number of digits 
     int m = getMax(arr, n); 
@@ -98,11 +103,13 @@ public class Sorts {
   }
 
   public void gnomeSort(Comparable<Integer>[] arr){
+    //Metodo extraido del video https://www.youtube.com/watch?v=tsmIz3_XPYE
     for (int i = 1; i < arr.length;){
 
       int com =(Integer) arr[i];
       if(arr[i-1].compareTo(com) <= 0){
         i++;
+
 
       }else{
         int tempArr = (int) arr[i-1];
@@ -117,6 +124,7 @@ public class Sorts {
   }
 
   public Integer[] mergeSort(Comparable<Integer>[] arr){
+    //Metodo extraido del video https://www.youtube.com/watch?v=yv6svAfoYik
     if(arr.length <= 1){
       return (Integer[]) arr;
     }
@@ -146,6 +154,7 @@ public class Sorts {
   }
 
   public Integer[] merge(Comparable<Integer>[] left, Comparable<Integer>[] right){
+    //Metodo utilizado por mergeSort
     Integer[] result = new Integer[left.length + right.length];
 
     int leftPointer, rightPointer, resultPointer;
@@ -173,6 +182,7 @@ public class Sorts {
   }
 
   public void swap(Comparable<Integer>[] arr, int left, int right){
+    //Metodo utilizado por selectionSort
 
     int temp = (int) arr[left];
     arr[left] = arr[right];
@@ -180,6 +190,7 @@ public class Sorts {
   }
 
   public void selectionSort(Comparable<Integer>[] arr){
+    //Metodo extraido del video https://www.youtube.com/watch?v=iWkGokDwZ48
     int min;
 
     for(int i=0; i < arr.length -1; i++){
