@@ -155,6 +155,7 @@ public class Main {
         System.err.println("Se ingreso una opcion invalida, intentelo de nuevo");
       }
     }
+    scan.close();
 
   }
   
